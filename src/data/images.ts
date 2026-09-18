@@ -12,7 +12,6 @@ import vagamon from "@/assets/vagamon.jpg";
 import kodaikanal from "@/assets/kodaikanal.jpg";
 import camping from "@/assets/camping.jpg";
 import waterfall from "@/assets/waterfall.jpg";
-import logo from "@/assets/tripri8-logo.png.asset.json";
 
 export const img = {
   heroGhats,
@@ -31,4 +30,4 @@ export const img = {
   waterfall,
 };
 
-export const logoUrl = logo.url;
+export const logoUrl = "/favicon.png";
