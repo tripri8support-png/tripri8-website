@@ -35,7 +35,7 @@ const values = [
   { title: "Repeat", text: "Most of our travellers come back — usually with more friends and a longer plan." },
 ];
 
-function About() {
+export function About() {
   return (
     <>
       <PageHero

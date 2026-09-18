@@ -21,5 +21,5 @@ export const navLinks = [
   { label: "Trips", to: "/trips" },
   { label: "Group Tours", to: "/group-tours" },
   { label: "Custom Trip", to: "/custom-trips" },
-  { label: "About & Contact", to: "/about" },
+  { label: "About & Contact", to: "/about-contact" },
 ] as const;

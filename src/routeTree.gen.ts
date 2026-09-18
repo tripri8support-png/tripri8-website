@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AboutContactRouteImport } from './routes/about-contact'
 import { Route as AdventuresRouteImport } from './routes/adventures'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CustomTripsRouteImport } from './routes/custom-trips'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutContactRoute = AboutContactRouteImport.update({
+  id: '/about-contact',
+  path: '/about-contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdventuresRoute = AdventuresRouteImport.update({
@@ -68,6 +74,7 @@ const TripsSlugRoute = TripsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-contact': typeof AboutContactRoute
   '/adventures': typeof AdventuresRoute
   '/contact': typeof ContactRoute
   '/custom-trips': typeof CustomTripsRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-contact': typeof AboutContactRoute
   '/adventures': typeof AdventuresRoute
   '/contact': typeof ContactRoute
   '/custom-trips': typeof CustomTripsRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-contact': typeof AboutContactRoute
   '/adventures': typeof AdventuresRoute
   '/contact': typeof ContactRoute
   '/custom-trips': typeof CustomTripsRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/about-contact'
     | '/adventures'
     | '/contact'
     | '/custom-trips'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/about-contact'
     | '/adventures'
     | '/contact'
     | '/custom-trips'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/about-contact'
     | '/adventures'
     | '/contact'
     | '/custom-trips'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AboutContactRoute: typeof AboutContactRoute
   AdventuresRoute: typeof AdventuresRoute
   ContactRoute: typeof ContactRoute
   CustomTripsRoute: typeof CustomTripsRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-contact': {
+      id: '/about-contact'
+      path: '/about-contact'
+      fullPath: '/about-contact'
+      preLoaderRoute: typeof AboutContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adventures': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AboutContactRoute: AboutContactRoute,
   AdventuresRoute: AdventuresRoute,
   ContactRoute: ContactRoute,
   CustomTripsRoute: CustomTripsRoute,
