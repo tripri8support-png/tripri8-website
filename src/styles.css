@@ -1,0 +1,226 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TripRi8 | Travel & Tours design system.
+ * Brand: purple / violet / magenta from the TripRi8 logo, on white + midnight navy.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-magenta: var(--magenta);
+  --color-midnight: var(--midnight);
+  --color-midnight-foreground: var(--midnight-foreground);
+  --color-lavender: var(--lavender);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.21 0.04 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.04 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.04 285);
+
+  --primary: oklch(0.45 0.235 296);
+  --primary-foreground: oklch(0.99 0.002 300);
+  --primary-deep: oklch(0.35 0.185 296);
+  --magenta: oklch(0.585 0.245 322);
+  --midnight: oklch(0.19 0.055 285);
+  --midnight-foreground: oklch(0.98 0.005 300);
+  --lavender: oklch(0.965 0.012 300);
+
+  --secondary: oklch(0.965 0.012 300);
+  --secondary-foreground: oklch(0.3 0.09 292);
+  --muted: oklch(0.968 0.008 300);
+  --muted-foreground: oklch(0.52 0.03 288);
+  --accent: oklch(0.95 0.025 305);
+  --accent-foreground: oklch(0.35 0.185 296);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.002 300);
+
+  --border: oklch(0.92 0.012 300);
+  --input: oklch(0.92 0.012 300);
+  --ring: oklch(0.45 0.235 296);
+
+  --sidebar: oklch(0.99 0.005 300);
+  --sidebar-foreground: oklch(0.21 0.04 285);
+  --sidebar-primary: oklch(0.45 0.235 296);
+  --sidebar-primary-foreground: oklch(0.99 0.002 300);
+  --sidebar-accent: oklch(0.95 0.025 305);
+  --sidebar-accent-foreground: oklch(0.35 0.185 296);
+  --sidebar-border: oklch(0.92 0.012 300);
+  --sidebar-ring: oklch(0.45 0.235 296);
+
+  --gradient-brand: linear-gradient(120deg, var(--primary-deep), var(--primary) 55%, var(--magenta));
+  --gradient-hero-veil: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--midnight) 62%, transparent) 0%,
+    color-mix(in oklab, var(--midnight) 34%, transparent) 38%,
+    color-mix(in oklab, var(--midnight) 82%, transparent) 100%
+  );
+  --gradient-image-veil: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--midnight) 88%, transparent) 0%,
+    color-mix(in oklab, var(--primary-deep) 30%, transparent) 55%,
+    transparent 100%
+  );
+  --shadow-soft: 0 1px 2px oklch(0.21 0.04 285 / 0.04), 0 12px 32px -18px oklch(0.21 0.04 285 / 0.22);
+  --shadow-lift: 0 24px 60px -28px oklch(0.35 0.185 296 / 0.4);
+}
+
+.dark {
+  --background: oklch(0.19 0.055 285);
+  --foreground: oklch(0.98 0.005 300);
+  --card: oklch(0.23 0.055 287);
+  --card-foreground: oklch(0.98 0.005 300);
+  --popover: oklch(0.23 0.055 287);
+  --popover-foreground: oklch(0.98 0.005 300);
+  --primary: oklch(0.62 0.22 300);
+  --primary-foreground: oklch(0.99 0.002 300);
+  --secondary: oklch(0.28 0.06 288);
+  --secondary-foreground: oklch(0.98 0.005 300);
+  --muted: oklch(0.28 0.06 288);
+  --muted-foreground: oklch(0.72 0.03 295);
+  --accent: oklch(0.32 0.09 295);
+  --accent-foreground: oklch(0.98 0.005 300);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.62 0.22 300);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Brand utilities */
+
+@utility label-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility text-gradient-brand {
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: var(--gradient-brand);
+}
+
+@utility veil-hero {
+  background-image: var(--gradient-hero-veil);
+}
+
+@utility veil-image {
+  background-image: var(--gradient-image-veil);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility glass-panel {
+  background-color: color-mix(in oklab, var(--background) 72%, transparent);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+}
+
+@utility glass-dark {
+  background-color: color-mix(in oklab, var(--midnight) 45%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  border: 1px solid oklch(1 0 0 / 0.14);
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 82rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 2.5rem;
+  }
+}
